@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>intro test</title>
+<style>html,body{margin:0;height:100%;background:#130f0d;overflow:hidden}#intro{position:fixed;inset:0;overflow:hidden}</style>
+</head><body>
+<div id="intro"></div>
+<script src="vendor/gsap.min.js"></script>
+<script src="js/intro.js"></script>
+<script>
+  const root = document.getElementById('intro');
+  const t0 = performance.now();
+  ZensationIntro.create({ root, fanSrc: 'assets/fan.webp', wordmarkSrc: 'assets/wordmark.webp', hankoSrc: 'assets/hanko.webp' })
+    .then(f => { window.__intro = f; window.__buildMs = Math.round(performance.now() - t0); window.__ready = true; })
+    .catch(e => { window.__err = String(e && e.stack || e); console.error(window.__err); window.__ready = true; });
+</script>
+</body></html>

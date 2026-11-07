@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zensation Dojo — Where every game reveals a piece of Japan</title>
+<meta name="description" content="Zensation Dojo brings traditional Japanese games, workshops and immersive experiences to colleges, festivals, anime cons and corporates in Bengaluru.">
+<meta name="theme-color" content="#14123a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.skip{display:none!important}body.intro-on{overflow:auto}.scroll,.hero__content,.hero__scrim,.hero__down{opacity:1!important;pointer-events:auto!important;transform:none!important}.stage-loading{display:none}</style></noscript>
+</head>
+<body class="intro-on">
+
+<button id="skip" class="skip" type="button" aria-label="Skip intro">Skip <b>▸</b></button>
+
+<!-- ═════════ SCROLL MENU ═════════ -->
+<nav class="scroll" id="scroll" aria-label="Main menu">
+  <span class="roller roller--top" aria-hidden="true"></span>
+  <div class="sheet">
+    <button class="scroll__toggle" id="scrollToggle" type="button" aria-expanded="false" aria-controls="scrollList">
+      <span class="scroll__label">MENU</span><span class="scroll__jp" aria-hidden="true">目次</span>
+    </button>
+    <div class="scroll__list" id="scrollList">
+      <div class="scroll__clip">
+        <ul>
+          <li><a href="#home"><i>家</i><span>Home<em>Ie</em></span></a></li>
+          <li><a href="#games"><i>遊</i><span>Games<em>Asobi</em></span></a></li>
+          <li><a href="#workshops"><i>工</i><span>Workshops<em>Kōbō</em></span></a></li>
+          <li><a href="#experiences"><i>体</i><span>Experiences<em>Taiken</em></span></a></li>
+          <li class="is-key"><a href="#events"><i>歴</i><span>Previous Events<em>Rekishi</em></span></a></li>
+        </ul>
+        <div class="scroll__foot">
+          <span class="orn" aria-hidden="true">✿</span>
+          <a class="scroll__contact" href="#profile" aria-label="Contact — Tavish S K" title="Contact">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7z" fill="currentColor"/></svg>
+          </a>
+          <span class="hanko-mini" aria-hidden="true">道場</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="roller roller--bottom" aria-hidden="true"></span>
+  <span class="tassel" aria-hidden="true"><i class="cord"></i><i class="bead"></i><i class="fringe"></i></span>
+</nav>
+
+<main>
+
+<!-- ═════════ HOME: the film's final scene stays as the backdrop ═════════ -->
+<section class="hero" id="home">
+  <div class="hero__stage" id="stage" aria-hidden="true"><div class="stage-loading"><span>道場</span></div></div>
+  <h1 class="sr-only">Zensation Dojo 道場 — where every game reveals a piece of Japan</h1>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__content">
+    <p class="hero__tag">Where every game reveals a piece of&nbsp;Japan.</p>
+    <div class="hero__cta">
+      <a class="btn btn--red" id="bookBtn" href="https://wa.me/919880092314?text=Hi%20Zensation%20Dojo%2C%20I%27d%20like%20to%20book%20an%20event." target="_blank" rel="noopener">Book Us <span aria-hidden="true">予約</span></a>
+      <a class="btn btn--ghost" href="#events">Previous Events</a>
+    </div>
+  </div>
+  <a class="hero__down" href="#games" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ═════════ WHAT WE DO ═════════ -->
+<section class="paper dojo" id="what">
+  <!-- the dojo interior: a locked camera frame that stays put while the cards scroll over it -->
+  <div class="dojo__stage" aria-hidden="true">
+    <div class="dojo__cam">
+      <div class="dojo__world" id="dojoWorld"></div>
+      <div class="dojo__bloom"></div>
+      <div class="dojo__grade"></div>
+      <div class="dojo__scrim"></div>
+      <div class="dojo__vig"></div>
+      <div class="dojo__grain"></div>
+    </div>
+  </div>
+  <header class="sec-head">
+    <p class="kicker">三つの道 · Three paths</p>
+    <h2>What we do</h2>
+    <p class="lede">Events, festivals, colleges, anime cons, corporates — we bring the dojo to you.</p>
+  </header>
+  <div class="cards">
+    <article class="card reveal" id="games">
+      <img src="assets/card-01-games.webp" alt="Games — Asobi, Japanese traditional games" width="600" height="918" loading="lazy">
+      <div class="card__body">
+        <h3>Games <small>遊 · Asobi</small></h3>
+        <p>Shogi, karuta, hanafuda and more — played the way they were meant to be, with a guide at every table.</p>
+      </div>
+    </article>
+    <article class="card reveal" id="workshops">
+      <img src="assets/card-02-workshops.webp" alt="Workshops — Kōbō, cultural workshops" width="600" height="918" loading="lazy">
+      <div class="card__body">
+        <h3>Workshops <small>工 · Kōbō</small></h3>
+        <p>Origami, calligraphy and hands-on craft sessions that leave everyone with something to take home.</p>
+      </div>
+    </article>
+    <article class="card reveal" id="experiences">
+      <img src="assets/card-03-experiences.webp" alt="Experiences — Taiken, immersive experiences" width="600" height="918" loading="lazy">
+      <div class="card__body">
+        <h3>Experiences <small>体 · Taiken</small></h3>
+        <p>Immersive Japan-themed setups for fests, offsites and conventions — a corner of Kyoto, anywhere.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═════════ PREVIOUS EVENTS ═════════ -->
+<section class="paper paper--deep" id="events">
+  <header class="sec-head">
+    <p class="kicker">歴 · Rekishi</p>
+    <h2>Previous events</h2>
+    <p class="lede">A few of the places the dojo has set up. <em>(Placeholders — real events and photos coming soon.)</em></p>
+  </header>
+  <div class="events" id="eventList"></div>
+</section>
+
+<!-- ═════════ PROFILE / CONTACT ═════════ -->
+<section class="profile" id="profile">
+  <div class="profile__inner reveal">
+    <p class="kicker kicker--light">人 · Host</p>
+    <div class="avatar" aria-label="Profile photo placeholder">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="17" fill="currentColor"/><path d="M14 92c0-20 16-33 36-33s36 13 36 33z" fill="currentColor"/></svg>
+    </div>
+    <h2>Tavish S K</h2>
+    <p class="role">[ Role / title — e.g. Founder &amp; Host, Zensation Dojo ]</p>
+    <p class="bio">[ A short introduction goes here — who Tavish is, how the dojo began, and what guests can expect. ]</p>
+    <ul class="links">
+      <li><span class="ico">✉</span><b>Email</b><span class="val is-empty">[ add email ]</span></li>
+      <li><span class="ico">☎</span><b>Phone</b><span class="val is-empty">[ add phone ]</span></li>
+      <li><span class="ico">◎</span><b>Instagram</b><span class="val is-empty">[ add Instagram ]</span></li>
+      <li><span class="ico">in</span><b>LinkedIn</b><span class="val is-empty">[ add LinkedIn ]</span></li>
+      <li><span class="ico">＋</span><b>More</b><span class="val is-empty">[ add link ]</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__mark">道場</div>
+  <p>© <span id="yr">2026</span> Zensation Dojo · Bengaluru</p>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="js/intro.js"></script>
+<script src="data/events.js"></script>
+<script src="js/site.js"></script>
+<script src="js/dojo.js"></script>
+</body>
+</html>
