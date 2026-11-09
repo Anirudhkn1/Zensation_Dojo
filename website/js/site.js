@@ -10,41 +10,35 @@
     set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   };
 
-  /* ───────── previous events (data/events.js) ───────── */
+  /* ───────── events (data/events.js) — each card opens event.html?e=<slug> ───────── */
   (function buildEvents() {
     const host = $('#eventList');
     const list = window.ZD_EVENTS || [];
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
     list.forEach((e, i) => {
-      const art = document.createElement('article');
-      art.className = 'event reveal';
+      const art = el('article', 'event reveal');
       art.style.transitionDelay = (i % 3) * 0.08 + 's';
-      const img = document.createElement('div');
-      img.className = 'event__img';
-      if (e.img) {
-        const im = document.createElement('img');
-        im.src = e.img; im.alt = e.title; im.loading = 'lazy';
-        img.appendChild(im);
-      } else {
-        const ph = document.createElement('div');
-        ph.className = 'event__ph';
-        ph.textContent = e.kanji || '遊';
-        const sm = document.createElement('small');
-        sm.textContent = 'Photo soon';
-        ph.appendChild(sm);
-        img.appendChild(ph);
-      }
-      const tag = document.createElement('span');
-      tag.className = 'event__tag'; tag.textContent = e.tag || '';
-      img.appendChild(tag);
-      const bd = document.createElement('div');
-      bd.className = 'event__body';
-      const seal = document.createElement('span');
-      seal.className = 'event__seal'; seal.textContent = e.kanji || '遊';
-      const h = document.createElement('h3'); h.textContent = e.title;
-      const p = document.createElement('p'); p.textContent = e.place || '';
-      const w = document.createElement('p'); w.className = 'when'; w.textContent = e.date || '';
-      bd.append(seal, h, p, w);
-      art.append(img, bd);
+      const a = el('a', 'event__link');
+      a.href = 'event.html?e=' + encodeURIComponent(e.slug);
+      a.setAttribute('aria-label', e.title + ' — open the event and its photos');
+
+      const img = el('div', 'event__img');
+      const im = el('img'); im.src = e.cover; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+      if (e.coverPos) im.style.objectPosition = e.coverPos;
+      img.appendChild(im);
+      img.appendChild(el('span', 'event__tag', e.tag || ''));
+      if (e.photos && e.photos.length) img.appendChild(el('span', 'event__count', e.photos.length + (e.photos.length === 1 ? ' photo' : ' photos')));
+
+      const bd = el('div', 'event__body');
+      bd.appendChild(el('span', 'event__seal', e.kanji || '祭'));
+      bd.appendChild(el('h3', '', e.title));
+      if (e.summary) bd.appendChild(el('p', '', e.summary));
+      const meta = [e.date, e.place].filter(Boolean).join(' · ');
+      if (meta) bd.appendChild(el('p', 'when', meta));
+      bd.appendChild(el('span', 'event__go', 'See the photos'));
+
+      a.append(img, bd);
+      art.appendChild(a);
       host.appendChild(art);
     });
   })();
@@ -84,7 +78,7 @@
     }));
 
     // current-section marker (aria-current) from what is on screen
-    const map = { home: '#home', games: '#games', workshops: '#workshops', experiences: '#experiences', events: '#events', profile: '#profile' };
+    const map = { home: '#home', games: '#games', workshops: '#workshops', experiences: '#experiences', events: '#events', about: '#about', profile: '#profile' };
     const mark = (id) => links.forEach((a) => {
       if (a.getAttribute('href') === map[id]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
     });

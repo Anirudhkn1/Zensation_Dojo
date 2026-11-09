@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/about.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.skip{display:none!important}body.intro-on{overflow:auto}.scroll,.hero__content,.hero__scrim,.hero__down{opacity:1!important;pointer-events:auto!important;transform:none!important}.stage-loading{display:none}</style></noscript>
 </head>
 <body class="intro-on">
@@ -30,7 +31,8 @@
           <li><a href="#games"><i>遊</i><span>Games<em>Asobi</em></span></a></li>
           <li><a href="#workshops"><i>工</i><span>Workshops<em>Kōbō</em></span></a></li>
           <li><a href="#experiences"><i>体</i><span>Experiences<em>Taiken</em></span></a></li>
-          <li class="is-key"><a href="#events"><i>歴</i><span>Previous Events<em>Rekishi</em></span></a></li>
+          <li class="is-key"><a href="#events"><i>歴</i><span>Events<em>Rekishi</em></span></a></li>
+          <li><a href="#about"><i>私</i><span>About Tavish<em>Watashi</em></span></a></li>
         </ul>
         <div class="scroll__foot">
           <span class="orn" aria-hidden="true">✿</span>
@@ -57,7 +59,7 @@
     <p class="hero__tag">Where every game reveals a piece of&nbsp;Japan.</p>
     <div class="hero__cta">
       <a class="btn btn--red" id="bookBtn" href="https://wa.me/919880092314?text=Hi%20Zensation%20Dojo%2C%20I%27d%20like%20to%20book%20an%20event." target="_blank" rel="noopener">Book Us <span aria-hidden="true">予約</span></a>
-      <a class="btn btn--ghost" href="#events">Previous Events</a>
+      <a class="btn btn--ghost" href="#events">Events</a>
     </div>
   </div>
   <a class="hero__down" href="#games" aria-label="Scroll down"><span></span></a>
@@ -106,7 +108,7 @@
   </div>
 </section>
 
-<!-- ═════════ PREVIOUS EVENTS ═════════ -->
+<!-- ═════════ EVENTS ═════════ -->
 <section class="paper fest" id="events">
   <!-- festival-street backdrop: sticky frame so the art never stretches to the section height -->
   <div class="fest__stage" aria-hidden="true">
@@ -120,10 +122,149 @@
   </div>
   <header class="sec-head">
     <p class="kicker">歴 · Rekishi</p>
-    <h2>Previous events</h2>
-    <p class="lede">A few of the places the dojo has set up. <em>(Placeholders — real events and photos coming soon.)</em></p>
+    <h2>Events</h2>
+    <p class="lede">Where the dojo has set up shop. <em>Tap an event to see the photos.</em></p>
   </header>
   <div class="events" id="eventList"></div>
+</section>
+
+<!-- ═════════ ABOUT TAVISH — a six-scene emaki (picture scroll) ═════════
+     Words come from the "Beyond Roles #74" feature. The three cut-out portraits sit left/right of the text; on wide screens
+     the stage pins and the scenes change as you scroll (Framer Motion, js/about.js), on phones the scenes simply stack. -->
+<section class="about" id="about" aria-labelledby="aboutTitle">
+  <div class="about__track" id="aboutTrack">
+    <div class="about__pin" id="aboutPin">
+
+      <div class="about__bg" aria-hidden="true">
+        <div class="about__wash" id="aboutWash"></div>
+        <div class="about__waves"></div>
+        <div class="about__sun" id="aboutSun"></div>
+        <span class="about__ghost" id="aboutGhost">独</span>
+        <div class="about__petals" id="aboutPetals"></div>
+        <div class="about__grain"></div>
+      </div>
+
+      <!-- the three cut-outs (wide screens: they travel between the left and right edge) -->
+      <div class="about__figs" aria-hidden="true">
+        <img class="fig fig--hat" data-fig="hat" src="assets/about-hat.webp" alt="" width="656" height="870" loading="lazy" decoding="async">
+        <img class="fig fig--sweep" data-fig="sweep" src="assets/about-sweep.webp" alt="" width="717" height="895" loading="lazy" decoding="async">
+        <img class="fig fig--double" data-fig="double" src="assets/about-double.webp" alt="" width="518" height="785" loading="lazy" decoding="async">
+      </div>
+
+      <div class="about__main">
+        <header class="about__head">
+          <p class="kicker">私 · Watashi — the host</p>
+          <h2 id="aboutTitle">Tavish S K</h2>
+          <p class="about__role">Founder, Zensation Dojo <i aria-hidden="true">◆</i> Student <i aria-hidden="true">◆</i> Bengaluru</p>
+          <p class="about__badge"><span aria-hidden="true">★</span> National-level cosplayer</p>
+        </header>
+
+        <div class="about__chaps" id="aboutChaps">
+
+          <!-- 一 · the quote -->
+          <article class="chap" data-i="0" data-kanji="独">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-hat.webp" alt="" width="656" height="870" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">一</span>
+              <p class="chap__tag" data-in>Beyond Roles · #74</p>
+              <blockquote class="chap__quote" data-in>If I enter a room, I have to be <b>the most unique person in it.</b></blockquote>
+              <p class="chap__lead" data-in>Tavish means it. A student, a founder, a cosplayer, and a litter-picking organiser. <b>All at once.</b></p>
+              <ul class="chips" data-in>
+                <li class="chip chip--hot"><b>Nationals</b><small>first handmade cosplay</small></li>
+                <li class="chip"><b>SpoGomi</b><small>litter-picking sport</small></li>
+                <li class="chip"><b>Japan</b><small>where he wants to build</small></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 二 · who is he -->
+          <article class="chap" data-i="1" data-kanji="人">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-sweep.webp" alt="" width="717" height="895" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">二</span>
+              <h3 data-in>Who is he?</h3>
+              <p data-in>Tavish SK is a student at BMS who <b>recently started his own venture, Zensation Dojo.</b> “I haven’t done a lot of things,” he says, and then lists all of this:</p>
+              <ul class="hats" data-in aria-label="All the hats he wears">
+                <li class="chip chip--hot"><b>Founder</b><small>Zensation Dojo</small></li>
+                <li class="chip"><b>Student</b><small>at BMS</small></li>
+                <li class="chip"><b>DevOps</b><small>intern</small></li>
+                <li class="chip"><b>2 NGOs</b><small>core organiser</small></li>
+                <li class="chip"><b>Football</b><small>captain &amp; coach</small></li>
+                <li class="chip"><b>SpoGomi</b><small>core committee</small></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 三 · how did it start -->
+          <article class="chap" data-i="2" data-kanji="始">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-double.webp" alt="" width="518" height="785" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">三</span>
+              <h3 data-in>How did it start?</h3>
+              <p data-in>Bishop Cotton Boys’ School, then Kumarans for PUC — <b>“the best decision I could ever take.”</b> A curious kid who kept asking why.</p>
+              <blockquote class="chap__aside" data-in>“Education from an institute and being literate are two different things.”</blockquote>
+              <p class="chap__next" data-in>Then came <b>Comic&nbsp;Con.</b></p>
+            </div>
+          </article>
+
+          <!-- 四 · cosplay -->
+          <article class="chap" data-i="3" data-kanji="衣">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-hat.webp" alt="" width="656" height="870" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">四</span>
+              <h3 data-in>How did cosplay happen?</h3>
+              <p data-in>Four years ago he went to his first Comic Con wearing the flashiest things he could find at home — and <b>people assumed he was cosplaying.</b> “Okay, let me make a story around it.” He created his own character, <b>Jigoku no Punk.</b></p>
+              <ol class="path" data-in aria-label="From a flashy outfit to Nationals">
+                <li><b>Outfit</b><small>whatever was flashiest</small></li>
+                <li><b>Own character</b><small>Jigoku no Punk</small></li>
+                <li><b>Handmade</b><small>stitched from scratch</small></li>
+                <li class="is-last"><b>Nationals</b><small>selected</small></li>
+              </ol>
+              <p class="chap__aside chap__aside--plain" data-in>“Anime changed my life.”</p>
+            </div>
+          </article>
+
+          <!-- 五 · SpoGomi -->
+          <article class="chap" data-i="4" data-kanji="拾">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-sweep.webp" alt="" width="717" height="895" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">五</span>
+              <h3 data-in>And he picks up litter <em>as a sport.</em></h3>
+              <p data-in><b>SpoGomi</b> is a Japanese competition where teams race to collect rubbish. He was a supervisor in 2025 and is now on its core committee. The hardest part? People asking why he is cleaning a park that isn’t his.</p>
+              <p data-in>In Japan, which he visited in 2024, he saw busy streets left spotless and children who clean their own classrooms. <b>That is the civic sense he wants here.</b></p>
+            </div>
+          </article>
+
+          <!-- 六 · what else, and where next -->
+          <article class="chap" data-i="5" data-kanji="夢">
+            <figure class="chap__fig" aria-hidden="true"><img src="assets/about-double.webp" alt="" width="518" height="785" loading="lazy" decoding="async"></figure>
+            <div class="chap__panel">
+              <span class="chap__seal" aria-hidden="true">六</span>
+              <h3 data-in>What else does he love?</h3>
+              <p data-in>He loves science and runs a movement called <b>Cosmic Unravelers.</b> Music, poetry, chess and football fill the rest.</p>
+              <ul class="chips chips--sm" data-in aria-label="Interests">
+                <li class="chip"><b>Music</b></li><li class="chip"><b>Poetry</b></li><li class="chip"><b>Chess</b></li><li class="chip chip--hot"><b>Football</b></li>
+              </ul>
+              <p data-in>His best memory? <b>Going to Japan, in 2024.</b> Next he wants to learn as much as he can across every field, and one day <b>build a startup in Japan.</b></p>
+              <p class="chap__cta" data-in><a class="btn btn--red" href="https://wa.me/919880092314?text=Hi%20Tavish%2C%20I%27d%20like%20to%20bring%20Zensation%20Dojo%20to%20my%20event." target="_blank" rel="noopener">Say hello <span aria-hidden="true">挨拶</span></a></p>
+            </div>
+          </article>
+
+        </div>
+
+        <ol class="about__rail" id="aboutRail" aria-label="Story chapters">
+          <li><button type="button" aria-label="Chapter 1 — the quote">一</button></li>
+          <li><button type="button" aria-label="Chapter 2 — who is he">二</button></li>
+          <li><button type="button" aria-label="Chapter 3 — how did it start">三</button></li>
+          <li><button type="button" aria-label="Chapter 4 — cosplay">四</button></li>
+          <li><button type="button" aria-label="Chapter 5 — SpoGomi">五</button></li>
+          <li><button type="button" aria-label="Chapter 6 — what else he loves">六</button></li>
+        </ol>
+        <p class="about__credit">Story from <em>Beyond Roles #74</em> · @beyondroleswithbaharul</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- ═════════ PROFILE / CONTACT ═════════ -->
@@ -134,14 +275,11 @@
       <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="17" fill="currentColor"/><path d="M14 92c0-20 16-33 36-33s36 13 36 33z" fill="currentColor"/></svg>
     </div>
     <h2>Tavish S K</h2>
-    <p class="role">[ Role / title — e.g. Founder &amp; Host, Zensation Dojo ]</p>
-    <p class="bio">[ A short introduction goes here — who Tavish is, how the dojo began, and what guests can expect. ]</p>
+    <p class="role">Founder &amp; Host, Zensation Dojo</p>
+    <p class="bio">A student at BMS, a DevOps intern, a national-level cosplayer and a litter-picking organiser — who one day wants to build a startup in Japan.</p>
     <ul class="links">
-      <li><span class="ico">✉</span><b>Email</b><span class="val is-empty">[ add email ]</span></li>
-      <li><span class="ico">☎</span><b>Phone</b><span class="val is-empty">[ add phone ]</span></li>
-      <li><span class="ico">◎</span><b>Instagram</b><span class="val is-empty">[ add Instagram ]</span></li>
-      <li><span class="ico">in</span><b>LinkedIn</b><span class="val is-empty">[ add LinkedIn ]</span></li>
-      <li><span class="ico">＋</span><b>More</b><span class="val is-empty">[ add link ]</span></li>
+      <li><span class="ico">☎</span><b>Phone</b><a class="val" href="tel:+919880092314">+91 98800 92314</a></li>
+      <li><span class="ico">◎</span><b>Instagram</b><a class="val" href="https://instagram.com/zensation.dojo" target="_blank" rel="noopener">@zensation.dojo</a></li>
     </ul>
   </div>
 </section>
@@ -158,5 +296,7 @@
 <script src="data/events.js"></script>
 <script src="js/site.js"></script>
 <script src="js/dojo.js"></script>
+<script src="vendor/motion.min.js"></script>
+<script src="js/about.js"></script>
 </body>
 </html>
