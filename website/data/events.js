@@ -73,8 +73,7 @@ window.ZD_EVENTS = [
     ],
     facts: [
       ['Venue', 'Kongsi Tea Bar, Jayanagar'],
-      ['Format', 'Halloween special: board games, origami, costumes'],
-      ['Theme', 'Japanese horror — Uzumaki-inspired spirals']
+      ['Format', 'Halloween special: board games, origami, costumes']
     ],
     photos: [
       { src: 'assets/events/japanese-horror-night/pair-lights.webp', thumb: 'assets/events/japanese-horror-night/pair-lights-t.webp', w: 1500, h: 2000, title: 'Happy Halloween', note: 'Skull mask, studded cap, and a spiral held over one eye — a nod to Junji Ito’s Uzumaki.' },
