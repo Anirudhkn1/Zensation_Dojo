@@ -9,7 +9,7 @@
 <script>
   const root = document.getElementById('intro');
   const t0 = performance.now();
-  ZensationIntro.create({ root, fanSrc: 'assets/fan.webp', wordmarkSrc: 'assets/wordmark.webp', hankoSrc: 'assets/hanko.webp' })
+  ZensationIntro.create({ root, fanSrc: 'assets/fan.webp', wordmarkSrc: 'assets/wordmark.webp' })
     .then(f => { window.__intro = f; window.__buildMs = Math.round(performance.now() - t0); window.__ready = true; })
     .catch(e => { window.__err = String(e && e.stack || e); console.error(window.__err); window.__ready = true; });
 </script>

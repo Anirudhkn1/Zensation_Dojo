@@ -13,7 +13,7 @@
  *                                  -> wind blows the petals away -> whip-pan right
  *  cut     petal-flash dip at 5.50
  *  SHOT 3  button     5.50 – 10.0  night: the closed fan appears, unfolds like a real fan (pleated paper slices swing out
- *                                  from the pivot), wordmark + hanko land. The scene STAYS as the site's hero backdrop.
+ *                                  from the pivot), the wordmark lands. The scene STAYS as the site's hero backdrop.
  */
 (function () {
   'use strict';
@@ -342,7 +342,7 @@
   async function createIntro(opts) {
     const root = opts.root, mode = opts.mode || 'full';
     buildSprites();
-    const [fanImg, wmImg, hkImg] = await Promise.all([loadImg(opts.fanSrc), loadImg(opts.wordmarkSrc), loadImg(opts.hankoSrc)]);
+    const [fanImg, wmImg] = await Promise.all([loadImg(opts.fanSrc), loadImg(opts.wordmarkSrc)]);
 
     const rw = Math.max(1, root.clientWidth || window.innerWidth), rh = Math.max(1, root.clientHeight || window.innerHeight);
     const portrait = rw < rh;
@@ -609,7 +609,7 @@
       await wait();
     }
 
-    /* ── shot 3: fan canvas (fan + wordmark + hanko) and the fx canvas (petals, lines, tint, dips) ── */
+    /* ── shot 3: fan canvas (fan + wordmark) and the fx canvas (petals, lines, tint, dips) ── */
     const fan = mkLayer(W, H, ps, 9);
     const fx = mkLayer(W, H, Math.min(ps, 1.25), 10);
     fx.c.style.willChange = 'auto';
@@ -661,7 +661,7 @@
       g.restore();
     }
 
-    const WM = { x: 290, y: 1130, w: 1600, h: 540 }, HK = { x: 1990, y: 1285, w: 230, h: 430 };
+    const WM = { x: 400, y: 1130, w: 1600, h: 540 };                  // centred under the fan
     // the wordmark's soft drop shadow is baked once (a per-frame canvas blur was the only real hitch in playback)
     const wmPad = 24 * sL, wmBake = mkOff(WM.w * sL + wmPad * 2, WM.h * sL + wmPad * 2, Math.min(ps, 1.25));
     wmBake.g.shadowColor = 'rgba(0,0,0,.6)'; wmBake.g.shadowBlur = 8 * sL; wmBake.g.shadowOffsetY = 6 * sL;
@@ -684,13 +684,7 @@
         for (let i = 0; i <= 12; i++) fg.lineTo(cl(cutX + (i % 2 ? -26 : 8) * sL, x0 - 5, x0 + w0 + 10), y0 + (h0 + 10) * i / 12);
         fg.lineTo(x0 - 5, y0 + h0 + 10); fg.closePath(); fg.clip();
         fg.drawImage(wmBake.c, x0 - wmPad, y0 - wmPad, w0 + wmPad * 2, h0 + wmPad * 2); fg.restore();
-      }
-      if (t >= 8.3) {                                              // hanko stamps in
-        const hp = q(prog(t, 8.3, 8.3 + 3 / FPS), 3), hx = LX(HK.x + HK.w / 2), hy = LY(HK.y + HK.h / 2);
-        fg.save(); fg.translate(hx, hy); fg.rotate(rad(lerp(-8, 0, hp))); const hsc = lerp(1.45, 1, hp); fg.scale(hsc, hsc);
-        fg.drawImage(hkImg, -HK.w * sL / 2, -HK.h * sL / 2, HK.w * sL, HK.h * sL); fg.restore();
-      }
-    }
+      }    }
 
     /* petals & fx */
     const PCOL = ['#fbc4d9', '#ef86b6', '#fff6f9', '#fbc4d9', '#c2488c'];

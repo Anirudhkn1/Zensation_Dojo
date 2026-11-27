@@ -113,7 +113,7 @@
   const seen = store.get('zd_intro') === '1';
   const force = params.has('intro');
   const hold = params.has('hold');                       // test hook: build the film but don't play it
-  const srcs = { fanSrc: 'assets/fan.webp', wordmarkSrc: 'assets/wordmark.webp', hankoSrc: 'assets/hanko.webp' };
+  const srcs = { fanSrc: 'assets/fan.webp', wordmarkSrc: 'assets/wordmark.webp' };
   const canFilm = typeof gsap !== 'undefined' && typeof ZensationIntro !== 'undefined' && !!document.createElement('canvas').getContext;
 
   function endIntro() {
